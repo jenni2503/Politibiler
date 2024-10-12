@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { PoliceCar } from "../types/PoliceCarsTypes";
 import Card from "../components/Card";
 import Header from "../components/Header";
+import CarFilter from "../components/CarFilter";
 
 const LandingPage = () => {
   const [policeCars, setPoliceCars] = useState<PoliceCar[]>([]);
+  const [filteredPoliceCars, setFilteredPoliceCars] = useState<PoliceCar[]>([]);
 
   // Fetch police cars from the URL
   useEffect(() => {
@@ -17,7 +19,7 @@ const LandingPage = () => {
         // Sort police cars by ID in ascending order
         data.sort((a, b) => parseInt(a.id) - parseInt(b.id));
         setPoliceCars(data);
-
+        setFilteredPoliceCars(data);
         console.log(data);
       } catch (error) {
         console.error("Error while fetching police cars", error);
@@ -28,9 +30,14 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div className="w-full bg-neutral-100">
+    <div className="w-full bg-neutral-100 pb-10">
       <Header />
-      <Card policeCars={policeCars} />
+      {/* reassigning setPoliceCars */}
+      <CarFilter
+        policeCars={policeCars}
+        setFilteredPoliceCars={setFilteredPoliceCars}
+      />
+      <Card filteredPoliceCars={filteredPoliceCars} />
     </div>
   );
 };

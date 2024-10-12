@@ -1,10 +1,10 @@
 import { PoliceCar } from "../types/PoliceCarsTypes";
 
 type CardProps = {
-  policeCars: PoliceCar[];
+  filteredPoliceCars: PoliceCar[];
 };
 
-const Card = ({ policeCars }: CardProps) => {
+const Card = ({ filteredPoliceCars }: CardProps) => {
   return (
     <div className="flex justify-center">
       <div className="w-5/6">
@@ -12,7 +12,7 @@ const Card = ({ policeCars }: CardProps) => {
           className="grid grid-cols-1 md:grid-cols-2 
         lg:grid-cols-3 gap-4"
         >
-          {policeCars.map((policeCar) => (
+          {filteredPoliceCars.map((policeCar) => (
             <div
               key={policeCar.id}
               className="border rounded-lg shadow-lg p-6
