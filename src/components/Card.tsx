@@ -1,4 +1,5 @@
 import { PoliceCar } from "../types/PoliceCarsTypes";
+import UpdateStatus from "./UpdateStatus";
 
 type CardProps = {
   filteredPoliceCars: PoliceCar[];
@@ -23,8 +24,8 @@ const Card = ({ filteredPoliceCars }: CardProps) => {
               </h1>
               <p>Modell: {policeCar.modell}</p>
               <p>Årsmodell: {policeCar.årsmodell}</p>
-              <p>Registreringsnummer: {policeCar.regNr}</p>
-              <p>Status: {policeCar.status}</p>
+              <p>RegistreringsNR: {policeCar.regNr}</p>
+              <UpdateStatus policeCar={policeCar} />
               {/* <p>ID: {policeCar.id}</p> */}
             </div>
           ))}

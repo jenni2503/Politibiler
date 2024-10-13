@@ -19,7 +19,6 @@ const LandingPage = () => {
         // Sort police cars by ID in ascending order
         data.sort((a, b) => parseInt(a.id) - parseInt(b.id));
         setPoliceCars(data);
-        setFilteredPoliceCars(data);
         console.log(data);
       } catch (error) {
         console.error("Error while fetching police cars", error);
@@ -32,7 +31,6 @@ const LandingPage = () => {
   return (
     <div className="w-full bg-neutral-100 pb-10">
       <Header />
-      {/* reassigning setPoliceCars */}
       <CarFilter
         policeCars={policeCars}
         setFilteredPoliceCars={setFilteredPoliceCars}
