@@ -50,7 +50,9 @@ const UpdateStatus = ({ policeCar }: Props) => {
         <p className="inline">Status: {status}</p>
       )}
       <button
-        className="ml-2 px-1 border border-slate-950 rounded-sm text-sm font-bold hover:bg-sky-300"
+        className={`ml-2 px-1 border border-slate-950 rounded-sm text-sm font-bold ${
+          isEditing ? "hover:bg-green-300" : "hover:bg-sky-300"
+        }`}
         onClick={handleEditClick}
       >
         {isEditing ? "Ferdig" : "Endre"}
