@@ -10,6 +10,7 @@ const CarFilter = ({ policeCars, setFilteredPoliceCars }: Props) => {
   const [selectedBrand, setSelectedBrand] = useState<string>("allBrand");
   const [selectedStatus, setSelectedStatus] = useState<string>("allStatus");
 
+  // to show all unique brands and status in drop downs
   const allBrands = [...new Set(policeCars.map((car) => car.merke))];
   const allStatus = [...new Set(policeCars.map((car) => car.status))];
 

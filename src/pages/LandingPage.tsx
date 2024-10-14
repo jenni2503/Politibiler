@@ -13,8 +13,8 @@ const LandingPage = () => {
     const fetchPoliceCars = async () => {
       const url = "https://politibiler-case.bks-dev.politiet.no/";
       try {
-        const response = await fetch(url);
-        const data: PoliceCar[] = await response.json();
+        const response = await fetch(url); //contains response status code and headers
+        const data: PoliceCar[] = await response.json(); // gets body in json format
 
         // Sort police cars by ID in ascending order
         data.sort((a, b) => parseInt(a.id) - parseInt(b.id));

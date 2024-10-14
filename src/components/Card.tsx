@@ -5,6 +5,7 @@ type CardProps = {
   filteredPoliceCars: PoliceCar[];
 };
 
+// Displaying police cars
 const Card = ({ filteredPoliceCars }: CardProps) => {
   return (
     <div className="flex justify-center">
