@@ -12,7 +12,7 @@ const UpdateStatus = ({ policeCar }: Props) => {
   // fictional call to backend
   const updateStatus = async (id: string, newStatus: string) => {
     // try {
-    //   const response = await fetch(`url/politibiler/${id}`, {
+    //   const response = await fetch(`url/politibil/${id}`, {
     //     method: "PATCH",
     //     headers: {
     //       "Content-Type": "application/json",
