@@ -1,4 +1,3 @@
-//test to make sure the drop down is uniuqe and no value is repeated
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import CarFilter from "../components/CarFilter";
@@ -80,6 +79,7 @@ const policeCars: PoliceCar[] = [
   },
 ];
 
+// Test to make sure the drop down is uniuqe
 describe("Carfilter", () => {
   it("should render unqiue brands in the dropdown", () => {
     const uniqueBrands = [
@@ -94,12 +94,13 @@ describe("Carfilter", () => {
       <CarFilter policeCars={policeCars} setFilteredPoliceCars={() => {}} />
     );
 
-    // Check that each unique brand is rendered in the drop down only once
+    // Check that each unique brand is in the drop down only once
     uniqueBrands.forEach((brand) => {
       const options = screen.getAllByRole("option", { name: brand });
-      // console.log(options);
       expect(options).toHaveLength(1); // Ensure no duplicates
       expect(options[0]).toBeInTheDocument();
+      // "Ford"
+      // "Toyota"
     });
   });
 });

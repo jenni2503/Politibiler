@@ -43,7 +43,7 @@ describe("Card", () => {
       },
     ];
     render(<Card filteredPoliceCars={policeCars} />);
-    // Checks if car's brand is rendered as heading
+    // Checks if each car brand appears as heading
     policeCars.forEach((car) => {
       expect(
         screen.getByRole("heading", { name: car.merke })
