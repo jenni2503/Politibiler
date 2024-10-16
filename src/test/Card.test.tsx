@@ -4,11 +4,15 @@ import Card from "../components/Card";
 import { PoliceCar } from "../types/PoliceCarsTypes";
 
 describe("Card", () => {
+  // Test to check if Card component recevies no police cars
   it("should render no cars when filteredPoliceCars array is empty", () => {
     render(<Card filteredPoliceCars={[]} />);
     expect(screen.getByText("No cars found")).toBeInTheDocument();
   });
+
+  // Test to ensure the Card component renders a list of police cars
   it("should render list of cars", () => {
+    // Mock data
     const policeCars: PoliceCar[] = [
       {
         id: "5",
@@ -39,6 +43,7 @@ describe("Card", () => {
       },
     ];
     render(<Card filteredPoliceCars={policeCars} />);
+    // Checks if car's brand is rendered as heading
     policeCars.forEach((car) => {
       expect(
         screen.getByRole("heading", { name: car.merke })

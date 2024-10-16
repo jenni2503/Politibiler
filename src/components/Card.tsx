@@ -7,6 +7,7 @@ type CardProps = {
 
 // Gets data and displaying police cars
 const Card = ({ filteredPoliceCars }: CardProps) => {
+  console.log("Re-render Card");
   return (
     <div className="flex justify-center">
       <div className="w-5/6">

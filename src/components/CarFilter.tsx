@@ -10,11 +10,14 @@ const CarFilter = ({ policeCars, setFilteredPoliceCars }: Props) => {
   const [selectedBrand, setSelectedBrand] = useState<string>("All Brand");
   const [selectedStatus, setSelectedStatus] = useState<string>("All Status");
 
+  console.log("Re-render CarFilter");
+
   // to show all unique brands and status in drop downs
   const allBrands = [...new Set(policeCars.map((car) => car.merke))];
   const allStatus = [...new Set(policeCars.map((car) => car.status))];
 
   useEffect(() => {
+    console.log(`Runs the useEffect when value is ${selectedBrand}`);
     const filteredCars = policeCars.filter((car) => {
       return (
         (selectedBrand === "All Brand" || car.merke === selectedBrand) &&

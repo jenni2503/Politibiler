@@ -8,6 +8,9 @@ My choices
 -how they respond to user actions
 -vitest built with testing modern javascript applications
 -supports typescript and jsx
+-Vitest testing framework for javascript and typescript, and works well with vite
+-React testing library using render and screen, and testingreact components
+-jest-dom for dom testing, by using toBeInTheDocument
 
 LandingPage.tsx
 why passing state as props
@@ -41,5 +44,3 @@ considering
 
 further develop
 -want to add images to show police cars for visual appealing
-
-

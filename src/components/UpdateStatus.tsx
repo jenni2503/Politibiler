@@ -11,8 +11,9 @@ const UpdateStatus = ({ policeCar }: Props) => {
 
   // fictional call to backend
   const updateStatus = async (id: string, newStatus: string) => {
+    // const url = "https://politibiler-case.bks-dev.politiet.no/politibil/${id}";
     // try {
-    //   const response = await fetch(`url/politibil/${id}`, {
+    //   const response = await fetch(url, {
     //     method: "PATCH",
     //     headers: {
     //       "Content-Type": "application/json",
@@ -45,13 +46,13 @@ const UpdateStatus = ({ policeCar }: Props) => {
           type="text"
           value={newStatus}
           onChange={(e) => setNewStatus(e.target.value)}
-          className="pl-1 border border-black rounded-sm"
+          className="pl-1 mt-1 border border-black rounded-sm"
         />
       ) : (
-        <p className="inline">Status: {newStatus}</p>
+        <p>Status: {newStatus}</p>
       )}
       <button
-        className={`ml-2 px-1 border border-slate-950 rounded-sm text-sm font-bold ${
+        className={`flex mt-2 px-1 border border-slate-950 rounded-sm text-sm font-bold ${
           isEditing ? "hover:bg-green-300" : "hover:bg-sky-300"
         }`}
         onClick={handleEditClick}

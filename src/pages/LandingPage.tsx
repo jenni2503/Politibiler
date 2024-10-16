@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { PoliceCar } from "../types/PoliceCarsTypes";
 import Card from "../components/Card";
-import Header from "../components/Header";
 import CarFilter from "../components/CarFilter";
 
 const LandingPage = () => {
   const [policeCars, setPoliceCars] = useState<PoliceCar[]>([]);
   const [filteredPoliceCars, setFilteredPoliceCars] = useState<PoliceCar[]>([]);
+
+  console.log("Re-render LandingPage");
 
   // Fetch police cars from the URL
   useEffect(() => {
@@ -29,8 +30,7 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div className="w-full bg-neutral-100 pb-10">
-      <Header />
+    <div className="w-full">
       <CarFilter
         policeCars={policeCars}
         setFilteredPoliceCars={setFilteredPoliceCars}
